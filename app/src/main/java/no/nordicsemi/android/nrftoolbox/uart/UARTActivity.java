@@ -253,6 +253,7 @@ public class UARTActivity extends BleProfileServiceReadyActivity<UARTService.UAR
 		configurationSpinner.setOnItemSelectedListener(this);
 		configurationSpinner.setAdapter(mConfigurationsAdapter);
 		configurationSpinner.setSelection(mConfigurationsAdapter.getItemPosition(mPreferences.getLong(PREFS_CONFIGURATION, 0)));
+		configurationSpinner.setVisibility(View.GONE);
 	}
 
 	@Override
@@ -337,6 +338,10 @@ public class UARTActivity extends BleProfileServiceReadyActivity<UARTService.UAR
 
 	@Override
 	protected boolean onOptionsItemSelected(int itemId) {
+		return true;
+	}
+	protected boolean onOptionsItemSelected1(int itemId) {
+
 		final String name = mConfiguration.getName();
 		switch (itemId) {
 			case R.id.action_configure:
@@ -848,5 +853,17 @@ public class UARTActivity extends BleProfileServiceReadyActivity<UARTService.UAR
 				element.setComment(builder.toString());
 			}
 		}
+	}
+
+	public void onBt1Clicked(final View view) {
+try {
+	mServiceBinder.send("OK");
+}catch (Exception e){}
+
+	}
+	public void onBt2Clicked(final View view) {
+		try {
+			mServiceBinder.send("NG");
+		}catch (Exception e){}
 	}
 }

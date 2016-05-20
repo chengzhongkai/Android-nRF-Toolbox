@@ -59,10 +59,18 @@ public class AppAdapter extends BaseAdapter {
 
 		final List<ResolveInfo> appList = mApplications = pm.queryIntentActivities(intent, 0);
 		// TODO remove the following loop after some time, when there will be no more MCP 1.1 at the market.
-		for (final ResolveInfo info : appList) {
-			if (MCP_PACKAGE.equals(info.activityInfo.packageName)) {
+		//for (final ResolveInfo info : appList) {
+		//	if (MCP_PACKAGE.equals(info.activityInfo.packageName)) {
+		//		appList.remove(info);
+				//break;
+		//	}
+		//}
+		for (int i= appList.size();i>0;i--) {
+			ResolveInfo info=appList.get(i-1);
+			if (MCP_PACKAGE.equals(info.activityInfo.packageName) || info.activityInfo.name.indexOf("uart")<0) {
+
 				appList.remove(info);
-				break;
+
 			}
 		}
 		Collections.sort(appList, new ResolveInfo.DisplayNameComparator(pm));

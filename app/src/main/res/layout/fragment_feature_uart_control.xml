@@ -37,7 +37,8 @@
 		android:text="@string/uart_feature_title_long"
 		android:textColor="@color/darkGray"
 		android:textSize="32dp"
-		android:textStyle="bold"/>
+		android:textStyle="bold"
+		android:id="@+id/view" />
 
 	<no.nordicsemi.android.nrftoolbox.widget.TrebuchetTextView
 		android:id="@+id/device_name"
@@ -61,7 +62,9 @@
 		android:layout_marginLeft="@dimen/feature_horizontal_margin"
 		android:layout_marginRight="@dimen/feature_horizontal_margin"
 		android:gravity="center"
-		android:orientation="vertical">
+		android:orientation="vertical"
+		android:visibility="gone"
+		android:id="@+id/linearLayout">
 
 		<GridView
 			android:id="@+id/grid"
@@ -98,6 +101,25 @@
 		android:layout_alignParentBottom="true"
 		android:layout_centerHorizontal="true"
 		android:layout_marginBottom="6dp"
-		android:src="@drawable/background_title"/>
+		android:src="@drawable/background_title"
+		android:visibility="gone" />
+
+	<Button
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="ON"
+		android:id="@+id/button"
+		android:layout_below="@+id/device_name"
+		android:layout_toEndOf="@+id/view"
+		android:onClick="onBt1Clicked" />
+
+	<Button
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="OFF"
+		android:id="@+id/button2"
+		android:layout_below="@+id/button"
+		android:layout_alignStart="@+id/button"
+		android:onClick="onBt2Clicked"/>
 
 </RelativeLayout>

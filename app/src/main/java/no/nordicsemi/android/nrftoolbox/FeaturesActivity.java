@@ -94,7 +94,7 @@ public class FeaturesActivity extends AppCompatActivity {
 		grid.setAdapter(new AppAdapter(this));
 		grid.setEmptyView(findViewById(android.R.id.empty));
 
-		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		getSupportActionBar().setDisplayHomeAsUpEnabled(false);
 	}
 
 	@Override
@@ -126,8 +126,8 @@ public class FeaturesActivity extends AppCompatActivity {
 
 		switch (item.getItemId()) {
 		case R.id.action_about:
-			final AppHelpFragment fragment = AppHelpFragment.getInstance(R.string.about_text, true);
-			fragment.show(getSupportFragmentManager(), null);
+			//final AppHelpFragment fragment = AppHelpFragment.getInstance(R.string.about_text, true);
+			//fragment.show(getSupportFragmentManager(), null);
 			break;
 		}
 		return true;

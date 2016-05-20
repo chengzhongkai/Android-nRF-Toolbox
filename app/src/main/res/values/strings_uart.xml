@@ -21,7 +21,7 @@
   ~ USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   -->
 <resources>
-    <string name="uart_feature_title">UART</string>
+    <string name="uart_feature_title">TAG</string>
     
     <string name="uart_action_configure">EDIT</string>
     <string name="uart_action_end">DONE</string>

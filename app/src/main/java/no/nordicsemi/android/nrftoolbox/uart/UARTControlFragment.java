@@ -38,6 +38,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
+import no.nordicsemi.android.log.Logger;
 import no.nordicsemi.android.nrftoolbox.R;
 import no.nordicsemi.android.nrftoolbox.uart.domain.Command;
 import no.nordicsemi.android.nrftoolbox.uart.domain.UartConfiguration;
@@ -124,4 +125,6 @@ public class UARTControlFragment extends Fragment implements GridView.OnItemClic
 		mEditMode = editMode;
 		mAdapter.setEditMode(mEditMode);
 	}
+
+
 }
